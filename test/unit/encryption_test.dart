@@ -1,5 +1,4 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 import 'package:reaxdb_dart/reaxdb_dart.dart';
 import 'dart:io';
 
@@ -309,10 +308,10 @@ void main() {
           lessThan(results['aes256']!),
         ); // XOR should be faster than AES-256
 
-        debugPrint('Performance Results:');
-        debugPrint('No Encryption: ${results['none']}ms');
-        debugPrint('XOR Encryption: ${results['xor']}ms');
-        debugPrint('AES-256 Encryption: ${results['aes256']}ms');
+        print('Performance Results:');
+        print('No Encryption: ${results['none']}ms');
+        print('XOR Encryption: ${results['xor']}ms');
+        print('AES-256 Encryption: ${results['aes256']}ms');
       });
     });
 

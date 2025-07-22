@@ -1,4 +1,4 @@
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 import 'package:reaxdb_dart/reaxdb_dart.dart';
 import 'dart:io';
 

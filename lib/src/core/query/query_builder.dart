@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart';
-
 import '../indexing/index_manager.dart';
 import '../indexing/secondary_index.dart';
 import '../../reaxdb.dart';
@@ -142,7 +140,7 @@ class QueryBuilder {
 
         candidateIds = (await index.findRange(null, null)).toSet();
       } else {
-        debugPrint('Query without index not implemented');
+        print('Query without index not implemented');
         return [];
       }
     }

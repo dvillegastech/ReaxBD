@@ -1,4 +1,4 @@
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 import 'package:reaxdb_dart/src/core/transactions/transaction_manager.dart';
 import 'package:reaxdb_dart/src/core/storage/hybrid_storage_engine.dart';
 import 'package:reaxdb_dart/src/domain/entities/database_entity.dart';

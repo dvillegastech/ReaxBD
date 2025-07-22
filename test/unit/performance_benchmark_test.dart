@@ -1,8 +1,8 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 import 'package:reaxdb_dart/reaxdb_dart.dart';
 import 'dart:io';
 import 'dart:math';
+import 'dart:typed_data';
 
 void main() {
   group('Performance Benchmark Tests', () {
@@ -43,10 +43,10 @@ void main() {
       final writeTime = stopwatch.elapsedMilliseconds;
       final writeThroughput = iterations / (writeTime / 1000.0);
 
-      debugPrint('Write Performance:');
-      debugPrint('  Total time: ${writeTime}ms');
-      debugPrint('  Throughput: ${writeThroughput.toStringAsFixed(2)} ops/sec');
-      debugPrint(
+      print('Write Performance:');
+      print('  Total time: ${writeTime}ms');
+      print('  Throughput: ${writeThroughput.toStringAsFixed(2)} ops/sec');
+      print(
         '  Avg latency: ${(writeTime / iterations).toStringAsFixed(3)}ms',
       );
 
@@ -72,10 +72,10 @@ void main() {
       final readTime = stopwatch.elapsedMilliseconds;
       final readThroughput = iterations / (readTime / 1000.0);
 
-      debugPrint('Read Performance:');
-      debugPrint('  Total time: ${readTime}ms');
-      debugPrint('  Throughput: ${readThroughput.toStringAsFixed(2)} ops/sec');
-      debugPrint(
+      print('Read Performance:');
+      print('  Total time: ${readTime}ms');
+      print('  Throughput: ${readThroughput.toStringAsFixed(2)} ops/sec');
+      print(
         '  Avg latency: ${(readTime / iterations).toStringAsFixed(3)}ms',
       );
 
@@ -115,13 +115,13 @@ void main() {
       final totalTime = stopwatch.elapsedMilliseconds;
       final throughput = iterations / (totalTime / 1000.0);
 
-      debugPrint('Mixed Workload Performance:');
-      debugPrint('  Total time: ${totalTime}ms');
-      debugPrint(
+      print('Mixed Workload Performance:');
+      print('  Total time: ${totalTime}ms');
+      print(
         '  Operations: $reads reads, $writes writes, $deletes deletes',
       );
-      debugPrint('  Throughput: ${throughput.toStringAsFixed(2)} ops/sec');
-      debugPrint(
+      print('  Throughput: ${throughput.toStringAsFixed(2)} ops/sec');
+      print(
         '  Avg latency: ${(totalTime / iterations).toStringAsFixed(3)}ms',
       );
 
@@ -150,11 +150,11 @@ void main() {
       final totalOps = batchSize * batches;
       final throughput = totalOps / (totalTime / 1000.0);
 
-      debugPrint('Batch Write Performance:');
-      debugPrint('  Total time: ${totalTime}ms');
-      debugPrint('  Total operations: $totalOps');
-      debugPrint('  Throughput: ${throughput.toStringAsFixed(2)} ops/sec');
-      debugPrint(
+      print('Batch Write Performance:');
+      print('  Total time: ${totalTime}ms');
+      print('  Total operations: $totalOps');
+      print('  Throughput: ${throughput.toStringAsFixed(2)} ops/sec');
+      print(
         '  Avg batch time: ${(totalTime / batches).toStringAsFixed(2)}ms',
       );
 
@@ -188,11 +188,11 @@ void main() {
       final writeMBps = (iterations * 100 / 1024.0) / (writeTime / 1000.0);
       final readMBps = (iterations * 100 / 1024.0) / (readTime / 1000.0);
 
-      debugPrint('Large Value Performance (100KB values):');
-      debugPrint(
+      print('Large Value Performance (100KB values):');
+      print(
         '  Write time: ${writeTime}ms (${writeMBps.toStringAsFixed(2)} MB/s)',
       );
-      debugPrint(
+      print(
         '  Read time: ${readTime}ms (${readMBps.toStringAsFixed(2)} MB/s)',
       );
 
@@ -221,10 +221,10 @@ void main() {
       final avgLatency = totalTime / iterations;
       final throughput = iterations / (totalTime / 1000.0);
 
-      debugPrint('Cache Hit Performance:');
-      debugPrint('  Total time: ${totalTime}ms');
-      debugPrint('  Avg latency: ${avgLatency.toStringAsFixed(3)}ms');
-      debugPrint('  Throughput: ${throughput.toStringAsFixed(2)} ops/sec');
+      print('Cache Hit Performance:');
+      print('  Total time: ${totalTime}ms');
+      print('  Avg latency: ${avgLatency.toStringAsFixed(3)}ms');
+      print('  Throughput: ${throughput.toStringAsFixed(2)} ops/sec');
 
       expect(avgLatency, lessThan(0.5)); // Sub-millisecond for cache hits
       expect(throughput, greaterThan(2000)); // Very high for cache hits
@@ -259,11 +259,11 @@ void main() {
       afterStopwatch.stop();
       final afterTime = afterStopwatch.elapsedMilliseconds;
 
-      debugPrint('Compaction Impact:');
-      debugPrint('  Compaction time: ${compactTime}ms');
-      debugPrint('  Read time before: ${beforeTime}ms');
-      debugPrint('  Read time after: ${afterTime}ms');
-      debugPrint(
+      print('Compaction Impact:');
+      print('  Compaction time: ${compactTime}ms');
+      print('  Read time before: ${beforeTime}ms');
+      print('  Read time after: ${afterTime}ms');
+      print(
         '  Improvement: ${((beforeTime - afterTime) / beforeTime * 100).toStringAsFixed(1)}%',
       );
 
@@ -314,10 +314,10 @@ void main() {
 
       final overhead = ((encryptedTime - plainTime) / plainTime * 100);
 
-      debugPrint('Encryption Overhead:');
-      debugPrint('  Plain time: ${plainTime}ms');
-      debugPrint('  Encrypted time: ${encryptedTime}ms');
-      debugPrint('  Overhead: ${overhead.toStringAsFixed(1)}%');
+      print('Encryption Overhead:');
+      print('  Plain time: ${plainTime}ms');
+      print('  Encrypted time: ${encryptedTime}ms');
+      print('  Overhead: ${overhead.toStringAsFixed(1)}%');
 
       expect(
         overhead,
@@ -353,9 +353,9 @@ void main() {
       final totalTime = stopwatch.elapsedMilliseconds;
       final throughput = (iterations * 2) / (totalTime / 1000.0);
 
-      debugPrint('Zero-Copy Serialization Performance:');
-      debugPrint('  Total time: ${totalTime}ms');
-      debugPrint('  Throughput: ${throughput.toStringAsFixed(2)} ops/sec');
+      print('Zero-Copy Serialization Performance:');
+      print('  Total time: ${totalTime}ms');
+      print('  Throughput: ${throughput.toStringAsFixed(2)} ops/sec');
 
       expect(throughput, greaterThan(1000)); // Fast serialization
     });
@@ -379,10 +379,10 @@ void main() {
       db.getPerformanceStats();
       perfStopwatch.stop();
 
-      debugPrint('Statistics Performance:');
-      debugPrint('  getStatistics: ${statsStopwatch.elapsedMilliseconds}ms');
-      debugPrint('  getDatabaseInfo: ${infoStopwatch.elapsedMilliseconds}ms');
-      debugPrint(
+      print('Statistics Performance:');
+      print('  getStatistics: ${statsStopwatch.elapsedMilliseconds}ms');
+      print('  getDatabaseInfo: ${infoStopwatch.elapsedMilliseconds}ms');
+      print(
         '  getPerformanceStats: ${perfStopwatch.elapsedMilliseconds}ms',
       );
 

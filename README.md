@@ -6,9 +6,9 @@
 [![Flutter](https://img.shields.io/badge/Flutter-%E2%9D%A4-blue)](https://flutter.dev)
 [![Platform](https://img.shields.io/badge/platform-iOS%20%7C%20Android%20%7C%20macOS%20%7C%20Windows%20%7C%20Linux-blue)](https://flutter.dev)
 
-The fastest NoSQL database for Flutter. Store millions of records with 21,000+ writes per second, instant reads from cache, and built-in encryption. Perfect for offline-first apps, real-time sync, and large datasets. Works on all platforms with zero native dependencies.
+The fastest NoSQL database for Dart / Flutter. Store millions of records with 21,000+ writes per second, instant reads from cache, and built-in encryption. Perfect for offline-first apps, real-time sync, and large datasets. Works on all platforms with zero native dependencies.
 
-**Keywords:** Flutter database, NoSQL, offline-first, local storage, cache, encryption, ACID transactions, real-time sync, mobile database, embedded database, key-value store, document database, high performance, zero dependencies
+**Keywords:** Flutter database, NoSQL, offline-first, local storage, cache, encryption, ACID transactions, real-time sync, embedded database, key-value store, document database, high performance, zero dependencies
 
 ## 🆕 What's New in v1.2.3 (July 20, 2025)
 - **CRITICAL FIX** - Fixed data persistence between application sessions
@@ -61,6 +61,12 @@ Then run:
 
 ```bash
 flutter pub get
+```
+
+or
+
+```bash
+dart pub get
 ```
 
 ## Quick Start

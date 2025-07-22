@@ -1,4 +1,4 @@
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 import 'package:reaxdb_dart/src/core/wal/write_ahead_log.dart';
 import 'dart:io';
 import 'dart:typed_data';

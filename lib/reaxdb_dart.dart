@@ -1,4 +1,4 @@
-/// ReaxDB - High-performance NoSQL database for Flutter
+/// ReaxDB - High-performance NoSQL database for Dart
 library;
 
 // Domain exports
